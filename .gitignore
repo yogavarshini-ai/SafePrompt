@@ -1,0 +1,44 @@
+# Environment variables and secrets
+**/.env
+**/.env.*
+**/.env.local
+!**/.env.example
+
+# Large model binaries and weights
+*.keras
+*.h5
+backend/models/*.keras
+backend/models/*.h5
+
+# SQLite databases and journals
+*.db
+*.db-shm
+*.db-wal
+*.db-journal
+*.sqlite
+*.sqlite3
+
+# Python bytecode, virtual environments, and test caches
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.coverage
+htmlcov/
+venv/
+.venv/
+
+# Node dependencies and build outputs
+node_modules/
+**/node_modules/
+dist/
+**/dist/
+
+# Logs
+*.log
+npm-debug.log*
+
+# OS and IDE caches
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

@@ -1,0 +1,57 @@
+@import "tailwindcss";
+
+:root {
+  color-scheme: light;
+}
+
+html,
+body,
+#root {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  background: #eef1f4;
+  color: #0b1220;
+  font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+:focus-visible {
+  outline: 2px solid #0f766e;
+  outline-offset: 2px;
+}
+
+/* The one animated moment: a redaction bar wiping across a sensitive value. */
+.redact {
+  background-image: linear-gradient(#0b1220, #0b1220);
+  background-repeat: no-repeat;
+  background-size: 0% 100%;
+  border-radius: 2px;
+  padding: 0 0.15em;
+  animation: redact-wipe 0.9s cubic-bezier(0.65, 0, 0.35, 1) 0.7s forwards;
+}
+
+@keyframes redact-wipe {
+  0% {
+    background-size: 0% 100%;
+    color: inherit;
+  }
+  55% {
+    color: inherit;
+  }
+  100% {
+    background-size: 100% 100%;
+    color: transparent;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .redact {
+    animation: none;
+    background-size: 100% 100%;
+    color: transparent;
+  }
+}
